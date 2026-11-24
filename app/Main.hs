@@ -251,8 +251,6 @@ confirmarPedido formulario =
             pure (Pagina (paginaConfirmacao selecionados))
 
 validarCarrinho :: [Int] -> Handler [Curso]
-validarCarrinho [] =
-    throwError (err400 { errBody = "Selecione pelo menos um curso." })
 validarCarrinho ids =
     case traverse buscarCurso (nub ids) of
         Nothing -> throwError (err400 { errBody = "Curso inexistente." })
