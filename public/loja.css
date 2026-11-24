@@ -72,3 +72,283 @@ label {
   outline: 3px solid #065e73;
   outline-offset: 3px;
 }
+
+.ementa {
+  margin-block: 2rem;
+}
+
+.ementa h3 {
+  margin: 1.5rem 0 0.75rem;
+  text-align: center;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  line-height: 1.3;
+}
+
+.ementa li > ol {
+  margin-top: 0.25rem;
+}
+
+.cabecalho-curso {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 1rem 2rem;
+}
+
+button.link-acao {
+  padding: 0;
+  background: transparent;
+  color: #07637a;
+  font: inherit;
+  text-align: left;
+  text-decoration: underline;
+}
+
+button.link-acao:hover {
+  background: transparent;
+  color: #054c5e;
+}
+
+@media (max-width: 42rem) {
+  .cabecalho-curso {
+    grid-template-columns: 1fr;
+  }
+}
+
+button.botao-remover {
+  background: #a52838;
+}
+
+button.botao-remover:hover {
+  background: #821e2b;
+}
+
+button.botao-secundario {
+  border: 1px solid #07637a;
+  background: #fff;
+  color: #07637a;
+}
+
+button.botao-secundario:hover {
+  background: #e7f2f5;
+}
+
+@media (max-width: 42rem) {
+  .acoes-curso {
+    justify-self: start;
+  }
+}
+
+.catalogo-topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.catalogo-topo h1 {
+  margin: 0;
+}
+
+.catalogo-topo form {
+  margin-inline-start: auto;
+}
+
+.grade-cursos article {
+  display: flex;
+  flex-direction: column;
+}
+
+.acoes-cartao {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.acoes-cartao button {
+  width: 100%;
+}
+
+.acoes-cartao button:disabled,
+.acoes-curso button:disabled {
+  background: #e2e8ec;
+  color: #4b5d68;
+  cursor: not-allowed;
+}
+
+.capa-curso {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+button.cartao-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.cartao-link .capa-curso {
+  margin-bottom: 0;
+}
+
+.dados-cartao p {
+  margin: 0 0 0.55rem;
+}
+
+.dados-cartao .preco-cartao {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.cabecalho-curso {
+  grid-template-columns: minmax(0, 1fr) min(42%, 25rem);
+}
+
+.capa-detalhes {
+  margin-bottom: 0;
+}
+
+@media (max-width: 42rem) {
+  .cabecalho-curso {
+    grid-template-columns: 1fr;
+  }
+}
+
+.acoes-curso {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.lista-carrinho {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #d5e2e8;
+  border-radius: 0.75rem;
+}
+
+.linha-carrinho {
+  display: grid;
+  grid-template-columns: 2.75rem 4.5rem minmax(0, 1fr) max-content;
+  grid-template-areas: "remover capa titulo preco";
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+}
+
+.linha-carrinho + .linha-carrinho {
+  border-top: 1px solid #d5e2e8;
+}
+
+.carrinho-remocao { grid-area: remover; }
+.carrinho-titulo { grid-area: titulo; }
+
+.carrinho-capa {
+  grid-area: capa;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.35rem;
+}
+
+.carrinho-preco {
+  grid-area: preco;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+button.remover-item {
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  background: transparent;
+  color: #a52838;
+  font-size: 1.4rem;
+}
+
+button.remover-item:hover {
+  background: #fbecef;
+}
+
+.carrinho-total {
+  margin: 1.25rem 0 0.75rem;
+  font-size: 1.25rem;
+  text-align: right;
+}
+
+.acoes-carrinho {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+button.botao-confirmar {
+  background: #246746;
+}
+
+button.botao-confirmar:hover {
+  background: #194d34;
+}
+
+@media (max-width: 36rem) {
+  .linha-carrinho {
+    grid-template-columns: 2.75rem 3rem minmax(0, 1fr);
+    grid-template-areas:
+      "remover capa titulo"
+      "remover capa preco";
+    gap: 0.25rem 0.5rem;
+  }
+}
+
+.linha-confirmada {
+  grid-template-columns: 4.5rem minmax(0, 1fr) max-content;
+  grid-template-areas: "capa titulo preco";
+}
+
+@media (max-width: 36rem) {
+  .linha-confirmada {
+    grid-template-columns: 3rem minmax(0, 1fr);
+    grid-template-areas:
+      "capa titulo"
+      "capa preco";
+  }
+}
+
+.carrinho-vazio {
+  display: grid;
+  justify-items: center;
+  gap: 0.9rem;
+  padding: clamp(1.5rem, 4vw, 3rem) 1rem;
+  text-align: center;
+}
+
+.carrinho-vazio p {
+  margin: 0;
+}
+
+.titulo-confirmacao {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.icone-confirmacao {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background: #e6f3eb;
+  color: #246746;
+  font-size: 0.75em;
+  line-height: 1;
+}
