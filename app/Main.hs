@@ -4,8 +4,12 @@
 -- Back-end: Servant
 module Main where
 
+import Data.Proxy
+import Network.Wai.Handler.Warp
+import Servant
+
 -- Mude a linha de baixo para cada página
-type API = "hello" :> GET '[JSON] String
+type API = "hello" :> Get '[JSON] String
 
 -- Mude as duas linhas de baixo para cada página
 helloFunc :: Server API
